@@ -22,13 +22,103 @@
                                 <frame key="frameInset" minX="42" minY="127" width="290" height="412"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYF-3l-tog">
+                                <frame key="frameInset" minX="269" minY="288" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="middleRightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nzk-wW-zOM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-AG-LRg">
+                                <frame key="frameInset" minX="172" minY="288" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="middleMiddleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRe-ue-Fpd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIo-vc-hW1">
+                                <frame key="frameInset" minX="76" minY="288" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="middleLeftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIw-ea-Ev0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-k7-Upk">
+                                <frame key="frameInset" minX="269" minY="182" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="topRightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="moG-3N-h12"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM0-aV-FCF">
+                                <frame key="frameInset" minX="172" minY="182" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="topMiddleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Twr-Dp-9yX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tic Tac Toe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8n-WA-xhq">
+                                <frame key="frameInset" minX="143" minY="28" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkB-PH-dTN">
+                                <frame key="frameInset" minX="122" minY="539" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-Dc-r38">
+                                <frame key="frameInset" minX="76" minY="182" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="topLeftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nZF-w9-l5w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjc-XB-sRc">
+                                <frame key="frameInset" minX="269" minY="395" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="bottomRightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTw-aT-mI3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQW-aJ-Ygv">
+                                <frame key="frameInset" minX="172" minY="395" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="bottomMiddleLeftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sFK-ht-KuA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-uD-yjh">
+                                <frame key="frameInset" minX="76" minY="395" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="bottomLeftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dk8-Ou-ktc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomLeftButton" destination="NR4-uD-yjh" id="aVS-nu-Rmh"/>
+                        <outlet property="bottomMiddleButton" destination="zQW-aJ-Ygv" id="ieF-hb-5pO"/>
+                        <outlet property="bottomRightButton" destination="Kjc-XB-sRc" id="2Ch-i7-1F2"/>
+                        <outlet property="endGameLabel" destination="vkB-PH-dTN" id="r7q-f4-Sp7"/>
+                        <outlet property="middleLeftButton" destination="kIo-vc-hW1" id="cCb-NE-WV9"/>
+                        <outlet property="middleMiddleButton" destination="RL9-AG-LRg" id="I7V-CW-cFh"/>
+                        <outlet property="middleRightButton" destination="LYF-3l-tog" id="gGR-HY-MJq"/>
+                        <outlet property="nameOfGameLabelo" destination="M8n-WA-xhq" id="HWH-mi-m43"/>
+                        <outlet property="topLeftButton" destination="xrZ-Dc-r38" id="Lto-xG-kEp"/>
+                        <outlet property="topMiddleButton" destination="IM0-aV-FCF" id="8pc-f0-vPx"/>
+                        <outlet property="topRightButton" destination="9ra-k7-Upk" id="Rp3-dF-DOC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="162.3688155922039"/>
+            <point key="canvasLocation" x="-50" y="153"/>
         </scene>
     </scenes>
     <resources>
