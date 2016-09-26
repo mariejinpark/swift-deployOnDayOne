@@ -29,12 +29,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var bottomMiddleButton: UIButton!
   @IBOutlet weak var bottomRightButton: UIButton!
   
-  var row1 = ["a", "b" ,"c"]
-  var row2 = ["d", "e" ,"f"]
-  var row3 = ["g", "h" ,"i"]
-  
-  var boardForX: [[Bool]] = Array(repeating: Array(repeating:false, count:3), count:3)
-  var boardForO: [[Bool]] = Array(repeating: Array(repeating:false, count:3), count:3)
+  var board: [[String]] = Array(repeating: Array(repeating:"", count:3), count:3)
   
   var winner: String = ""//stores winning player's X or O
   
@@ -53,8 +48,7 @@ class ViewController: UIViewController {
   @IBAction func topLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topLeftButton.setTitle(buttonText, for: .normal)
-    //row1[0] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 0, columnIndex: 0)
+    board[0][0] = buttonText
     topLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -63,8 +57,7 @@ class ViewController: UIViewController {
   @IBAction func topMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topMiddleButton.setTitle(buttonText, for: .normal)
-    //row1[1] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 0, columnIndex: 1)
+    board[0][1] = buttonText
     topMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -73,8 +66,7 @@ class ViewController: UIViewController {
   @IBAction func topRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topRightButton.setTitle(buttonText, for: .normal)
-    //row1[2] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 0, columnIndex: 2)
+    board[0][2] = buttonText
     topRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -84,8 +76,7 @@ class ViewController: UIViewController {
   @IBAction func middleLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleLeftButton.setTitle(buttonText, for: .normal)
-    //row2[0] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 1, columnIndex: 0)
+    board[1][0] = buttonText
     middleLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -94,8 +85,7 @@ class ViewController: UIViewController {
   @IBAction func middleMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleMiddleButton.setTitle(buttonText, for: .normal)
-    //row2[1] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 1, columnIndex: 1)
+    board[1][1] = buttonText
     middleMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -104,8 +94,7 @@ class ViewController: UIViewController {
   @IBAction func middleRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleRightButton.setTitle(buttonText, for: .normal)
-    //row2[2] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 1, columnIndex: 2)
+    board[1][2] = buttonText
     middleRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -115,8 +104,7 @@ class ViewController: UIViewController {
   @IBAction func bottomLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomLeftButton.setTitle(buttonText, for: .normal)
-    //row3[0] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 2, columnIndex: 0)
+    board[2][0] = buttonText
     bottomLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -125,8 +113,7 @@ class ViewController: UIViewController {
   @IBAction func bottomMiddleLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomMiddleButton.setTitle(buttonText, for: .normal)
-    //row3[1] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 2, columnIndex: 1)
+    board[2][1] = buttonText
     bottomMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -135,8 +122,7 @@ class ViewController: UIViewController {
   @IBAction func bottomRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomRightButton.setTitle(buttonText, for: .normal)
-    //row3[2] = buttonText
-    updateLogicBoard(xOrO: buttonText, rowIndex: 2, columnIndex: 2)
+    board[2][2] = buttonText
     bottomRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
@@ -161,10 +147,8 @@ class ViewController: UIViewController {
   
   func resetGame() {
     endGameLabel.isHidden = true
-    row1 = ["a", "b" ,"c"]
-    row2 = ["d", "e" ,"f"]
-    row3 = ["g", "h" ,"i"]
     hideAllButtons()
+    board = Array(repeating: Array(repeating:"", count:3), count:3)
     turnCounter = 1
   }
   
@@ -185,52 +169,32 @@ class ViewController: UIViewController {
   
   func checkIfGameWon() {
     //check vertical rows
-    if row1[0] ==  row2[0]  && row3[0] == row2[0]  {
-      gameWon(rowIndexValue: row1[0])
+    if board[0][0] != "" && board[0][0] == board[1][0] && board[1][0] == board[2][0]  {
+      gameWon(rowIndexValue: board[0][0])
     }
-    else if row1[1] ==  row2[1]  && row3[1] == row2[1]{
-      gameWon(rowIndexValue: row1[1])
+    else if board[0][1] != "" && board[0][1] == board[1][1] && board[2][1] == board[1][1]  {
+      gameWon(rowIndexValue: board[0][1])
     }
-    else if row1[2] ==  row2[2]  && row3[2] == row2[2]{
-      gameWon(rowIndexValue: row1[2])
+    else if board[0][2] != "" && board[0][2] == board[1][2] && board[2][2] == board[1][2]  {
+      gameWon(rowIndexValue: board[0][2])
     }
-    //check diagonal rows
-    else if row1[0] == row2[1] && row3[2] == row2[1]{
-      gameWon(rowIndexValue: row1[0])
+    //check horizontal
+    if board[0][0] != "" && board[0][0] == board[0][1] && board[0][1] == board[0][2]  {
+      gameWon(rowIndexValue: board[0][0])
     }
-    else if row1[2] == row2[1] && row3[0] == row2[1]{
-      gameWon(rowIndexValue: row1[2])
+    else if board[1][0] != "" && board[1][0] == board[1][1] && board[1][2] == board[1][1]  {
+      gameWon(rowIndexValue: board[0][1])
     }
-    //check horizontal rows
-    else if row1[0] == row1[1] && row1[2] == row1[1]{
-      gameWon(rowIndexValue: row1[0])
+    else if board[2][0] != "" && board[2][0] == board[2][1] && board[2][2] == board[2][1]  {
+      gameWon(rowIndexValue: board[2][0])
     }
-    else if row2[0] == row2[1] && row2[2] == row2[1]{
-      gameWon(rowIndexValue: row1[0])
-    }
-    else if row3[0] == row3[1] && row3[2] == row3[1]{
-      gameWon(rowIndexValue: row1[0])
-    }
+
   }
   
   func printBoardArr() {
     print("Board X: ")
-    print(boardForX)
+    print(board)
     print("\n")
-    print("Board O: ")
-    print(boardForO)
-    print("\n")
-  }
-  
-  func updateLogicBoard(xOrO: String, rowIndex: Int, columnIndex: Int) {
-    switch xOrO {
-    case "X":
-      boardForX[rowIndex][columnIndex] = true
-    case "O":
-      boardForO[rowIndex][columnIndex] = true
-    default:
-      print("Error!!!")
-    }
   }
 }
 
