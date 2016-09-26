@@ -28,9 +28,11 @@ class ViewController: UIViewController {
   @IBOutlet weak var bottomMiddleButton: UIButton!
   @IBOutlet weak var bottomRightButton: UIButton!
   
-  var row1 = ["", "" ,""]
-  var row2 = ["", "" ,""]
-  var row3 = ["", "" ,""]
+  var row1 = ["a", "b" ,"c"]
+  var row2 = ["d", "e" ,"f"]
+  var row3 = ["g", "h" ,"i"]
+  
+  var winner: String = ""//stores winning player's X or O
   
   var turnCounter = 1 //odd turn is x, even is o
   
@@ -48,18 +50,21 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     topLeftButton.setTitle(buttonText, for: .normal)
     row1[0] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func topMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topMiddleButton.setTitle(buttonText, for: .normal)
     row1[1] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func topRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topRightButton.setTitle(buttonText, for: .normal)
     row1[2] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   
@@ -67,18 +72,21 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     middleLeftButton.setTitle(buttonText, for: .normal)
     row2[0] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func middleMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleMiddleButton.setTitle(buttonText, for: .normal)
     row2[1] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func middleRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleRightButton.setTitle(buttonText, for: .normal)
     row2[2] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   
@@ -86,26 +94,25 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     bottomLeftButton.setTitle(buttonText, for: .normal)
     row3[0] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func bottomMiddleLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomMiddleButton.setTitle(buttonText, for: .normal)
     row3[1] = buttonText
+    checkIfGameWon()
     turnCounter += 1
   }
   @IBAction func bottomRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomRightButton.setTitle(buttonText, for: .normal)
     row3[2] = buttonText
+    checkIfGameWon()
     turnCounter += 1
-    print(row1.joined(separator: " "))
-    print(row2.joined(separator: " "))
-    print(row3.joined(separator: " "))
   }
 
   func hideAllButtons() {
-    topLeftButton.isHidden = true
     topMiddleButton.isHidden = true
     topRightButton.isHidden = true
     middleLeftButton.isHidden = true
@@ -127,6 +134,24 @@ class ViewController: UIViewController {
     }
     else{
       return "O"
+    }
+  }
+  
+  func checkIfGameWon() {
+    if row1[0] ==  row2[0]  && row3[0] == row2[0]  {
+      print("WINNER!!!!")
+    }
+    else if row1[1] ==  row2[1]  && row3[1] == row2[1]{
+      print("WINNER!!!!")
+    }
+    else if row1[2] ==  row2[2]  && row3[2] == row2[2]{
+      print("WINNER!!!!")
+    }
+    else if row1[0] == row2[1] && row3[2] == row2[1]{
+      print("WINNER!!!!")
+    }
+    else if row1[2] == row2[1] && row3[0] == row2[1]{
+      print("WINNER!!!!")
     }
   }
 }
