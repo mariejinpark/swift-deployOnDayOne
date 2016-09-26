@@ -137,21 +137,38 @@ class ViewController: UIViewController {
     }
   }
   
+  func gameWon(rowIndexValue value: String){
+    endGameLabel.text = "Congratulations, player \(value) is the winner!"
+    endGameLabel.isHidden = false
+  }
+  
   func checkIfGameWon() {
+    //check vertical rows
     if row1[0] ==  row2[0]  && row3[0] == row2[0]  {
-      print("WINNER!!!!")
+      gameWon(rowIndexValue: row1[0])
     }
     else if row1[1] ==  row2[1]  && row3[1] == row2[1]{
-      print("WINNER!!!!")
+      gameWon(rowIndexValue: row1[1])
     }
     else if row1[2] ==  row2[2]  && row3[2] == row2[2]{
-      print("WINNER!!!!")
+      gameWon(rowIndexValue: row1[2])
     }
+    //check diagonal rows
     else if row1[0] == row2[1] && row3[2] == row2[1]{
-      print("WINNER!!!!")
+      gameWon(rowIndexValue: row1[0])
     }
     else if row1[2] == row2[1] && row3[0] == row2[1]{
-      print("WINNER!!!!")
+      gameWon(rowIndexValue: row1[2])
+    }
+    //check horizontal rows
+    else if row1[0] == row1[1] && row1[2] == row1[1]{
+      gameWon(rowIndexValue: row1[0])
+    }
+    else if row2[0] == row2[1] && row2[2] == row2[1]{
+      gameWon(rowIndexValue: row1[0])
+    }
+    else if row3[0] == row3[1] && row3[2] == row3[1]{
+      gameWon(rowIndexValue: row1[0])
     }
   }
 }
