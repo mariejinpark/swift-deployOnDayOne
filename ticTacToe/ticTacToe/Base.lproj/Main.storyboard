@@ -99,6 +99,14 @@
                                     <action selector="bottomLeftButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCh-xF-dN7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZd-Km-NM0">
+                                <frame key="frameInset" minX="131" minY="599" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start New Game"/>
+                                <connections>
+                                    <action selector="startNewGameClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMI-RC-D7f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -111,6 +119,7 @@
                         <outlet property="middleMiddleButton" destination="RL9-AG-LRg" id="I7V-CW-cFh"/>
                         <outlet property="middleRightButton" destination="LYF-3l-tog" id="gGR-HY-MJq"/>
                         <outlet property="nameOfGameLabelo" destination="M8n-WA-xhq" id="HWH-mi-m43"/>
+                        <outlet property="startOverButton" destination="qZd-Km-NM0" id="TuD-0i-OQA"/>
                         <outlet property="topLeftButton" destination="xrZ-Dc-r38" id="Lto-xG-kEp"/>
                         <outlet property="topMiddleButton" destination="IM0-aV-FCF" id="8pc-f0-vPx"/>
                         <outlet property="topRightButton" destination="9ra-k7-Upk" id="Rp3-dF-DOC"/>

@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var nameOfGameLabelo: UILabel!
   @IBOutlet weak var endGameLabel: UILabel!
+  @IBOutlet weak var startOverButton: UIButton!
   
   //top row buttons
   @IBOutlet weak var topLeftButton: UIButton!
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     topLeftButton.setTitle(buttonText, for: .normal)
     row1[0] = buttonText
+    topLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -57,6 +59,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     topMiddleButton.setTitle(buttonText, for: .normal)
     row1[1] = buttonText
+    topMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -64,6 +67,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     topRightButton.setTitle(buttonText, for: .normal)
     row1[2] = buttonText
+    topRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -72,6 +76,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     middleLeftButton.setTitle(buttonText, for: .normal)
     row2[0] = buttonText
+    middleLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -79,6 +84,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     middleMiddleButton.setTitle(buttonText, for: .normal)
     row2[1] = buttonText
+    middleMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -86,6 +92,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     middleRightButton.setTitle(buttonText, for: .normal)
     row2[2] = buttonText
+    middleRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -94,6 +101,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     bottomLeftButton.setTitle(buttonText, for: .normal)
     row3[0] = buttonText
+    bottomLeftButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -101,6 +109,7 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     bottomMiddleButton.setTitle(buttonText, for: .normal)
     row3[1] = buttonText
+    bottomMiddleButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
@@ -108,23 +117,33 @@ class ViewController: UIViewController {
     let buttonText = showXorO()
     bottomRightButton.setTitle(buttonText, for: .normal)
     row3[2] = buttonText
+    bottomRightButton.titleLabel?.isHidden = false;
     checkIfGameWon()
     turnCounter += 1
   }
 
+  @IBAction func startNewGameClicked(_ sender: UIButton) {
+    resetGame()
+  }
+  
   func hideAllButtons() {
-    topMiddleButton.isHidden = true
-    topRightButton.isHidden = true
-    middleLeftButton.isHidden = true
-    middleMiddleButton.isHidden = true
-    middleRightButton.isHidden = true
-    bottomLeftButton.isHidden = true
-    bottomMiddleButton.isHidden = true
-    bottomRightButton.isHidden = true
+    topLeftButton.titleLabel?.isHidden = true
+    topMiddleButton.titleLabel?.isHidden = true
+    topRightButton.titleLabel?.isHidden = true
+    middleLeftButton.titleLabel?.isHidden = true
+    middleMiddleButton.titleLabel?.isHidden = true
+    middleRightButton.titleLabel?.isHidden = true
+    bottomLeftButton.titleLabel?.isHidden = true
+    bottomMiddleButton.titleLabel?.isHidden = true
+    bottomRightButton.titleLabel?.isHidden = true
   }
   
   func resetGame() {
     endGameLabel.isHidden = true
+    row1 = ["a", "b" ,"c"]
+    row2 = ["d", "e" ,"f"]
+    row3 = ["g", "h" ,"i"]
+    hideAllButtons()
     turnCounter = 1
   }
   
@@ -140,6 +159,7 @@ class ViewController: UIViewController {
   func gameWon(rowIndexValue value: String){
     endGameLabel.text = "Congratulations, player \(value) is the winner!"
     endGameLabel.isHidden = false
+    //resetGame()
   }
   
   func checkIfGameWon() {
