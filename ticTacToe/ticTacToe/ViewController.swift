@@ -30,8 +30,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var bottomRightButton: UIButton!
   
   var board: [[String]] = Array(repeating: Array(repeating:"", count:3), count:3)
-  
-  var turnCounter = 1 //odd turn is x, even is o
+  var turnCounter = 0 //odd turn is o, even is x
+  var isPlayingAI = false //flag for ai mode
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -153,7 +153,7 @@ class ViewController: UIViewController {
     endGameLabel.isHidden = true
     hideAllButtons()
     board = Array(repeating: Array(repeating:"", count:3), count:3)
-    turnCounter = 1
+    turnCounter = 0
   }
   
   func showXorO() -> String{
@@ -192,6 +192,16 @@ class ViewController: UIViewController {
     else if board[2][0] != "" && board[2][0] == board[2][1] && board[2][2] == board[2][1]  {
       gameWon(rowIndexValue: board[2][0])
     }
+  }
+  
+  func aiPlayerMove() {
+    var randomRowIndex = Int(arc4random_uniform(UInt32(board.capacity)))
+    var randomColumnIndex = Int(arc4random_uniform(UInt32(board[0].capacity)))
+    while board[randomRowIndex][randomColumnIndex] == "" && turnCounter < 9 {
+      randomRowIndex = Int(arc4random_uniform(UInt32(board.capacity)))
+      randomColumnIndex = Int(arc4random_uniform(UInt32(board[0].capacity)))
+    }
+    
   }
   
   func printBoardArr() {
