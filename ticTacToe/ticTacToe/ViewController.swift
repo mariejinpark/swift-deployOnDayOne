@@ -31,8 +31,6 @@ class ViewController: UIViewController {
   
   var board: [[String]] = Array(repeating: Array(repeating:"", count:3), count:3)
   
-  var winner: String = ""//stores winning player's X or O
-  
   var turnCounter = 1 //odd turn is x, even is o
   
   override func viewDidLoad() {
@@ -54,6 +52,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func topMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topMiddleButton.setTitle(buttonText, for: .normal)
@@ -63,6 +62,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func topRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     topRightButton.setTitle(buttonText, for: .normal)
@@ -82,6 +82,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func middleMiddleButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleMiddleButton.setTitle(buttonText, for: .normal)
@@ -91,6 +92,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func middleRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     middleRightButton.setTitle(buttonText, for: .normal)
@@ -110,6 +112,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func bottomMiddleLeftButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomMiddleButton.setTitle(buttonText, for: .normal)
@@ -119,6 +122,7 @@ class ViewController: UIViewController {
     turnCounter += 1
     printBoardArr()
   }
+  
   @IBAction func bottomRightButtonClicked(_ sender: AnyObject) {
     let buttonText = showXorO()
     bottomRightButton.setTitle(buttonText, for: .normal)
@@ -188,7 +192,6 @@ class ViewController: UIViewController {
     else if board[2][0] != "" && board[2][0] == board[2][1] && board[2][2] == board[2][1]  {
       gameWon(rowIndexValue: board[2][0])
     }
-
   }
   
   func printBoardArr() {
@@ -196,5 +199,6 @@ class ViewController: UIViewController {
     print(board)
     print("\n")
   }
+  
 }
 
