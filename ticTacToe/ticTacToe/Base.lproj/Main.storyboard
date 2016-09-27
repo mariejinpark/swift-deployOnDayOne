@@ -107,15 +107,18 @@
                                     <action selector="startNewGameClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMI-RC-D7f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Zo-05-s0a">
-                                <frame key="frameInset" minX="137" minY="579" width="102" height="30"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-tg-lo5">
+                                <frame key="frameInset" minX="292" minY="579" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Against AI"/>
-                            </button>
+                                <connections>
+                                    <action selector="aiSwitchOn:" destination="BYZ-38-t0r" eventType="valueChanged" id="LY0-EI-8fn"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="aiSwitch" destination="zBg-tg-lo5" id="3YP-pc-iLC"/>
                         <outlet property="bottomLeftButton" destination="NR4-uD-yjh" id="aVS-nu-Rmh"/>
                         <outlet property="bottomMiddleButton" destination="zQW-aJ-Ygv" id="ieF-hb-5pO"/>
                         <outlet property="bottomRightButton" destination="Kjc-XB-sRc" id="2Ch-i7-1F2"/>
